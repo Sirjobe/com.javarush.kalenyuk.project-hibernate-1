@@ -2,7 +2,7 @@
 <head>
     <title>RPG</title>
     <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
-    <link href="/css/my.css" rel="stylesheet">
+    <link href="css/my.css" rel="stylesheet">
 </head>
 <body onload="showList(0)">
 <h1>RPG admin panel</h1>
@@ -87,56 +87,11 @@
     <div class="create__group">
         <span>
             <button type="submit" onclick='createAcc()'>
-                <img src="/img/save.png" alt="">
+                <img src="img/save.png" alt="">
             </button>
         </span>
     </div>
 </div>
-<!--<label for="input_name_new">Name:</label>-->
-<!--<input type="text" id="input_name_new" name="name" required size="12" maxlength="12">-->
-<!--<br>-->
-<!--<label for="input_title_new">Title:</label>-->
-<!--<input type="text" id="input_title_new" title="name" required size="30" maxlength="30">-->
-<!--<br>-->
-<!--<label for="input_race_new">Race:</label>-->
-<!--<select id="input_race_new" name='race'>-->
-<!--    <option value='HUMAN'>HUMAN</option>-->
-<!--    <option value='DWARF'>DWARF</option>-->
-<!--    <option value='ELF'>ELF</option>-->
-<!--    <option value='GIANT'>GIANT</option>-->
-<!--    <option value='ORC'>ORC</option>-->
-<!--    <option value='TROLL'>TROLL</option>-->
-<!--    <option value='HOBBIT'>HOBBIT</option>-->
-<!--</select>-->
-<!--<br>-->
-<!--<label for="input_profession_new">Profession:</label>-->
-<!--<select id="input_profession_new" name='profession'>-->
-<!--    <option value='WARRIOR'>WARRIOR</option>-->
-<!--    <option value='ROGUE'>ROGUE</option>-->
-<!--    <option value='SORCERER'>SORCERER</option>-->
-<!--    <option value='CLERIC'>CLERIC</option>-->
-<!--    <option value='PALADIN'>PALADIN</option>-->
-<!--    <option value='NAZGUL'>NAZGUL</option>-->
-<!--    <option value='WARLOCK'>WARLOCK</option>-->
-<!--    <option value='DRUID'>DRUID</option>-->
-<!--</select>-->
-<!--<br>-->
-<!--<label for="input_level_new">Level:</label>-->
-<!--<input type="number" id="input_level_new" name="level" min="0" max="100">-->
-<!--<br>-->
-<!--<label for="input_birthday_new">Birthday:</label>-->
-<!--<input type="date" id="input_birthday_new" name="birthday" min="2000-01-01" max="3000-12-31">-->
-<!--<br>-->
-<!--<label for="input_banned_new">Banned:</label>-->
-<!--<select id="input_banned_new" name='banned'>-->
-<!--    <option value='false'>false</option>-->
-<!--    <option value='true'>true</option>-->
-<!--</select>-->
-<!--<br><br>-->
-<!--<span>-->
-<!--    <button type="submit" onclick='createAcc()'>Save</button>-->
-<!--</span>-->
-
 <script>
     function showList(page_number) {
         let url = "/rest/players?";
@@ -167,10 +122,10 @@
                     + new Date(item.birthday).toLocaleDateString() + "</td><td>"
                     + item.banned + "</td><td>"
                     + "<button id='button_edit_" + item.id + "' onclick='editAcc(" + item.id + ")'>"
-                    + "<img src='/img/edit.png' class='img_edit'>"
+                    + "<img src='img/edit.png' class='img_edit'>"
                     + "</button>" + "</td><td>"
                     + "<button id='button_delete_" + item.id + "' onclick='deleteAcc(" + item.id + ")'>"
-                    + "<img src='/img/delete.png' class='img_delete'>"
+                    + "<img src='img/delete.png' class='img_delete'>"
                     + "</button>" + "</td>")
                     .appendTo('#table_1');
             });
@@ -232,7 +187,7 @@
         $(identifier_delete).remove();
 
         // replace "edit" button with "save"
-        let save_image_tag = "<img src='/img/save.png' class='img_save'>";
+        let save_image_tag = "<img src='img/save.png' class='img_save'>";
         $(identifier_edit).html(save_image_tag);
         let property_save_tag = "saveAcc(" + id + ")";
         $(identifier_edit).attr("onclick", property_save_tag);
